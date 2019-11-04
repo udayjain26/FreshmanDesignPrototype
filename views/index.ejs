@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+<div class = "ui main text container">
+    <div class = "ui huge header">Event List</div>
+    <div class = "ui top attached segment">
+        <div class = "ui divided items">
+            <% events.forEach(function(event){ %>
+                <div class = "item">
+                    <div class = "image">
+                        <img src = "<%= event.image%>">
+                    </div>
+                    <div class = "content">
+                        <a class = "header" href = "/events/<%=event._id%>"><%=event.title%><a>
+                        <h3>Location:<%=event.location%></h3>
+                        <h4>Time: <%=event.time%></h4>
+                        <div class = "description">
+                            <p><%=event.description%></p>
+                        </div>
+                        <div class = "meta">
+                            <span>Created:<%=event.created.toDateString()%></span>
+                        </div>
+                        <div class = "extra">
+                            <a class = "ui floated green basic button" href="/events/<%=event._id%>">Open Thread</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>

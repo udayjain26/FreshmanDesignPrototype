@@ -1,0 +1,25 @@
+<% include ./partials/header %>
+<div class = "ui main text container segment">
+    <div class = "ui huge header"><%=event.title%></div>
+    <div class = "ui top attached">
+        <div class = "item">
+            <img class = "ui centered rounded image" src = "<%= event.image%>">
+            <div class = "content">
+                <h3>Location:<%=event.location%></h3>
+                <h4>Time:<%=event.time%></h4>
+            </div>
+            <div class = "description">
+                <p><%=event.description%></p>
+            </div>
+            <span>Created:<%=event.created.toDateString()%></span>
+        </div>
+        <button type="button" class = "ui black basic button">Upvote</button>
+        <button type="button" class = "ui blue basic button">Comment</button>
+        <button type="button" class = "ui green basic button">Add to My Calendar</button>
+        <a class = "ui basic orange button" href = "/events/<%=event._id%>/edit">Edit</a>
+        <form action = "/events/<%=event._id%>?_method=DELETE" method = "POST">
+            <button id = "delete" class = "ui red basic button">Delete Event</button>
+        </form>
+    </div>
+</div>
+<% include ./partials/footer %>

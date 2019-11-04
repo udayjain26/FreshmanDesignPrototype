@@ -1,0 +1,36 @@
+<% include ./partials/header %>
+<div class = "ui main text container segment">
+    <div class = "ui huge header">New User</div>
+    <form class = "ui form" action ="/users" method = "POST">
+        <div class = "field">
+            <label>First Name</label>
+            <input type = "text" name = "user[firstName]" placeholder = "First Name">
+        </div>
+        <div class = "field">
+            <label>Last Name</label>
+        <input type = "text" name = "user[lastName]" placeholder = "Last Name">
+        </div>
+        <div class = "field">
+            <label>Image</label>
+        <input type = "text" name = "user[image]" placeholder = "Image Link">
+        </div>
+        <div class = "field">
+            <label>Email</label>
+        <input type = "text" name = "user[email]" placeholder = "Email">
+        </div>
+        <div class = "field">
+            <label>Mobile</label>
+        <input type = "text" name = "user[mobile]" placeholder = "000-000-0000">
+        </div>
+        <div class = "field">
+            <label>Major</label>
+        <input type = "text" name = "user[major]" placeholder = "Major">
+        </div>
+        <div class = "field">
+            <label>Bio</label>
+        <textarea name = "user[bio]"></textarea>
+        </div>
+        <input class = "ui blue big basic button" type = "submit">
+    </form>
+</div>
+<% include ./partials/footer %>

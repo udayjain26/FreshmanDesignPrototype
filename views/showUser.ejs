@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+<div class = "ui main text container segment">
+    <img class = "ui small circular image" src = "<%= user.image%>">
+    <div class = "ui huge header"><%=user.firstName%><%=user.lastName%></div>
+    <div class = "ui top attached">
+        <div class = "item">
+            <div class = "content">
+                <h3>Email:<%=user.email%></h3>
+                <h3>Mobile:<%=user.mobile%></h3>
+                <h3>Major:<%=user.major%></h3>
+            </div>
+            <div class = "description">
+                <p><%=user.bio%></p>
+            </div>
+        </div>
+        <button type="button" class = "ui black basic button">Add to Friend List</button>
+        <button type="button" class = "ui blue basic button">Message</button>
+        <form action = "/users/<%=user._id%>?_method=DELETE" method = "POST">
+            <button id = "delete" class = "ui red basic button">Delete User</button>
+        </form>
+    </div>
+</div>
+<% include ./partials/footer %>

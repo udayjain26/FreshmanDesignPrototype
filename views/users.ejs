@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+<div class = "ui main text container">
+    <div class = "ui huge header">All Users</div>
+    <div class = "ui top attached segment">
+        <div class = "ui top divided items">
+            <% users.forEach(function(user){ %>
+                <div class = "item">
+                    <div class = "ui small circular image">
+                        <img src = "<%= user.image%>">
+                    </div>
+                    <div class = "content">
+                        <a class = "header" href = "/users/<%=user._id%>"><%=user.firstName%> <%=user. lastName%><a>
+                    </div>
+                </div>
+                
+            <% }) %>
+            
+        </div>
+        
+    </div>
+    
+</div>
+<% include ./partials/footer %>
